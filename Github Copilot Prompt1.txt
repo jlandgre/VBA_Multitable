@@ -1,21 +1,21 @@
 Prompt for creating Tables class
 ================================
 
-Background Prompt
+xxx Background Prompt (replace all "StatsTest" with project's class name)
 ----------------
-* We are going to write a VBA Class called PanelData that executes multistep procedures made up of several functions.
+* We are going to write a VBA Class called StatsTest that executes multistep procedures made up of several functions.
 * We will also use a custom VBA unit test suite in a second *.xlsm workbook to test the class.
 * Before we start class-specific coding and testing, we need to initialize the VBA Projects for the code project and unit test workbooks.
 * We will make extensive use of tbls, which is a class instance of Tables class.
 * tbls attributes are tblRowsCols class instances. These objects keep track of rows/columns tables within the VBA project and have attributes like .wkbk and .wksht for the VBA workbook and worksheet objects and .rngRows and .rngHeader, which are a row range for populated data and a range of first row variable names at the top of the table.
-* Our project will use the errs instance of a custom ErrorHandling class to handle errors in the PanelData class. errs is declared as a global variable in the project, and the setErrs function call at the beginning of each function instances errs if it has not been initialized by a calling function as in this example
+* Our project will use the errs instance of a custom ErrorHandling class to handle errors in the StatsTest class. errs is declared as a global variable in the project, and the setErrs function call at the beginning of each function instances errs if it has not been initialized by a calling function as in the example .Init function code below
 * For Boolean functions, SetErrs takes care of initializing the function to True (unless an optional IsDriver argument indicates that the calling routine is a Sub or non-Boolean function)
 * errs.RecordErr is called in the ErrorExit label to record the error in the errs object. It takes care of reporting the error and sets the function to False in cases where the function redirects to ErrorExit when an error occurs
-* The errs.IsFail function sets errs params for reporting the error if its Boolean condition evaluates to True --indicating an error occurred. IsFail uses a local error code such as "1" in the example to set errs.iCodeLocal used by .RecordErr to look up the error message by local error code and name of the calling function or sub
 
-* Based on our PanelData code plan, we need to create a VBA class called Tables like this one.
+* Based on our StatsTest code plan, we need to create a VBA class called Tables like this one.
 * This is an example Tables VBA class for a project that involves two tables.
 * All subs and functions should include a 4-line docstring like the example. Do not repeat the function's name in the docstring. Just give a short description of what it does.
+* Replace 5/30/24 with today's date: 9/11/24
 
 ```
 Option Explicit
@@ -40,19 +40,21 @@ End Function
 
 Do you understand this background?
 ---------------------
-End background prompt
+xxx End background prompt
 
 
 
-Prompt for initializing Tables class for a project
+xxx Prompt for initializing Tables class for a project
 --------------------------
-Create the Tables.Init for our project that has the following tables:
+Create the Tables class code including Tables.Init for our project that has the following tables:
 
-* Table1
-* Table2
-* etc.
+* Raw
+* Summary
+
+Include declarations of these as type Object
+
 ---------------------
-End prompt
+xxx End prompt
 
 
 
@@ -78,7 +80,7 @@ Prompts for Function Writing
 Background Prompt
 ----------------
 xxx
-* Our project will use the errs instance of a custom ErrorHandling class to handle errors in the PanelData class. errs is declared as a global variable in the project, and the setErrs function call at the beginning of each function instances errs if it has not been initialized by a calling function as in this example
+* Our project will use the errs instance of a custom ErrorHandling class to handle errors in the StatsTest class. errs is declared as a global variable in the project, and the setErrs function call at the beginning of each function instances errs if it has not been initialized by a calling function as in this example
 * For Boolean functions, SetErrs takes care of initializing the function to True (unless an optional IsDriver argument indicates that the calling routine is a Sub or non-Boolean function)
 * errs.RecordErr is called in the ErrorExit label to record the error in the errs object. It takes care of reporting the error and sets the function to False in cases where the function redirects to ErrorExit when an error occurs
 * The errs.IsFail function sets errs params for reporting the error if its Boolean condition evaluates to True --indicating an error occurred. IsFail uses a local error code such as "1" in the example to set errs.iCodeLocal used by .RecordErr to look up the error message by local error code and name of the calling function or sub
